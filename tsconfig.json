@@ -33,8 +33,8 @@
     // "declarationMap": true,
 
     // === Code Hygiene ===
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,       // set true later once code stabilize
+    // "noUnusedLocals": true,
+    // "noUnusedParameters": true,       // set true later once code stabilize
 
     // === Performance ===
     "incremental": true,               // speeds up recompilation

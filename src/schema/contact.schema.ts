@@ -4,17 +4,17 @@ const categoryOptions = ["Plastic Components", "Injection Moulding", "Tooling De
 
 const contactSchema = z.object({
     name: z
-        .string()
+        .string({"error": "Name is required"})
         .trim()
         .min(2, "Name must be at least 2 characters")
         .regex(/^[a-zA-Z ]+$/, "Please Enter a valid Name"),
     phone: z
-        .string()
+        .string({"error": "Phone is required"})
         .trim()
-        .regex(/^[6-9][0-9]{9}$/, "Please Enter a valid Phone Number"),
-    category: z.enum(categoryOptions, "Please select a valid category"),
+        .regex(/^[6-9][0-9]{9}$/, "Please Enter a valid 10 digit Phone Number"),
+    category: z.enum(categoryOptions, {error: "Please select a valid category"}),
     city: z
-        .string()
+        .string({error: "City is required"})
         .trim()
         .min(2, "Please Enter a valid City")
         .regex(/^[a-zA-Z ]+$/, "Please Enter a valid City"),
@@ -22,9 +22,4 @@ const contactSchema = z.object({
 
 type TContact = z.infer<typeof contactSchema>;
 
-function validateContact(contact: TContact) {
-    const result = contactSchema.safeParse(contact);
-    return result;
-}
-
-export { validateContact, type TContact, categoryOptions };
+export { contactSchema, type TContact, categoryOptions };

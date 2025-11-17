@@ -1,6 +1,7 @@
-import { createBulkEnquiry } from "./contact.controller";
+import { createBulkEnquiry, createCustomerEnquiry } from "./contact.controller";
 
 
 export const contactController = {
-    createBulkEnquiry
+    createBulkEnquiry,
+    createCustomerEnquiry
 }

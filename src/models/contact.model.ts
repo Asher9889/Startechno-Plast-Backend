@@ -7,7 +7,7 @@ const contactSchema = new mongoose.Schema({
     },
     type: {
         type: String,
-        enum: ["BULK-ENQUIRY", "SINGLE-ENQUIRY"],
+        enum: ["BULK-ENQUIRY", "CUSTOMER-ENQUIRY"],
         required: [true, "Type is required"]
     },
     phone: {
@@ -21,11 +21,15 @@ const contactSchema = new mongoose.Schema({
     },
     category: {
         type: String,
-        required: [true, "Category is required"]
+        default: null
     },
     city: {
         type: String,
-        required: [true, "City is required"]
+        default: null
+    },
+    message: {
+        type: String,
+        default: null
     }
 })
 

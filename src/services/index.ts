@@ -1,7 +1,8 @@
-import { createBulkEnquiryService } from "./contact.service";
+import { createBulkEnquiryService, createCustomerEnquiryService } from "./contact.service";
 
 
 export const contactService = {
-    createBulkEnquiryService
+    createBulkEnquiryService,
+    createCustomerEnquiryService
 }
     

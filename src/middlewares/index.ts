@@ -1,4 +1,4 @@
-import { validateBulkEnquiryReqBody, validateCustomerEnquiryReqBody} from "./validations/contact.validation.middleware";
+import { validateBulkEnquiryReqBody, validateCustomerEnquiryReqBody, validateEnquiryReqBody } from "./validations/contact.validation.middleware";
 
 
-export { validateBulkEnquiryReqBody, validateCustomerEnquiryReqBody }
+export { validateBulkEnquiryReqBody, validateCustomerEnquiryReqBody, validateEnquiryReqBody }

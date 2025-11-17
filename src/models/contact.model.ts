@@ -5,9 +5,13 @@ const contactSchema = new mongoose.Schema({
         type: String,
         required: [true, "Name is required"]
     },
+    company: {
+        type: String,
+        default: null
+    },
     type: {
         type: String,
-        enum: ["BULK-ENQUIRY", "CUSTOMER-ENQUIRY"],
+        enum: ["BULK-ENQUIRY", "CUSTOMER-ENQUIRY", "ENQUIRY"],
         required: [true, "Type is required"]
     },
     phone: {
@@ -24,6 +28,10 @@ const contactSchema = new mongoose.Schema({
         default: null
     },
     city: {
+        type: String,
+        default: null
+    },
+    foundHow: {
         type: String,
         default: null
     },

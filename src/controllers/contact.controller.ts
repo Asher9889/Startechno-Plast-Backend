@@ -1,13 +1,20 @@
-import {  Request, Response } from "express";
+import { Request, Response, NextFunction } from "express";
 import { StatusCodes } from "http-status-codes";
+import { contactService } from "../services";
+import { ApiError, ApiResponse } from "../utils";
 
-function createBulkEnquiry(req:Request, res:Response) {
+async function createBulkEnquiry(req: Request, res: Response, next: NextFunction) {
     try {
-        
-        
-    } catch (error) {
+
+        req.body.type = "BULK-ENQUIRY";
+        const savedEnquiry = await contactService.createBulkEnquiryService(req.body);
+        return ApiResponse.success(res, "Enquiry created successfully", savedEnquiry, StatusCodes.CREATED);
+    } catch (error: any) {
         console.log(error);
-        return res.status(500).json({ message: "Internal Server Error" });
+        if (error instanceof ApiError) {
+            return next(error);
+        }
+        return next(ApiResponse.error(res, error.message, StatusCodes.INTERNAL_SERVER_ERROR, []));
     }
 }
 

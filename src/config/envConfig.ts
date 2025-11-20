@@ -18,13 +18,16 @@ const envConfig: IEnvConfig = {
     refreshSecret: process.env.JWT_REFRESH_SECRET || "test",
 
     // Hostinger
-    hostingerWebMailHost: process.env.HOSTINGER_WEB_MAIL_HOST || "",
-    hostingerWebMailPort: Number(process.env.HOSTINGER_WEB_MAIL_PORT) || 0,
-    hostingerWebMailUser: process.env.HOSTINGER_WEB_MAIL_AUTH_USER || "",
-    hostingerWebMailPass: process.env.HOSTINGER_WEB_MAIL_AUTH_PASS || "",
+    hostingerWebMailHost: process.env.HOSTINGER_WEB_MAIL_HOST || "smtp.titan.email",
+    hostingerWebMailPort: Number(process.env.HOSTINGER_WEB_MAIL_PORT) || 465,
+    hostingerWebMailUser: process.env.HOSTINGER_WEB_MAIL_AUTH_USER || "mukesh@startecnoplast.com",
+    hostingerWebMailPass: process.env.HOSTINGER_WEB_MAIL_AUTH_PASS || "Mukesh@123",
 
     // Client Email
-    clientEmail: process.env.CLIENT_EMAIL || ""
+    clientEmail: process.env.CLIENT_EMAIL || "",
+
+    //
+    enquiryN8NWebhookUrl: process.env.ENQUIRY_N8N_WEBHOOK_URL || ""
 
 };
 

@@ -2,6 +2,8 @@ import { TContact } from "../schema";
 import { Contact } from "../models";
 import { ApiError, ApiResponse } from "../utils";
 import { StatusCodes } from "http-status-codes";
+import axios from "axios";
+import { envConfig } from "../config";
 
 export async function createBulkEnquiryService(enquiryData: TContact) {
     try {
@@ -44,7 +46,7 @@ export async function createEnquiryService(enquiryData: TContact) {
         if(!savedEnquiry) {
             throw new ApiError(StatusCodes.INTERNAL_SERVER_ERROR, "Failed to save enquiry", []);
         }
-
+        await axios.post(envConfig.enquiryN8NWebhookUrl, enquiryData); // trigger n8n workflow
         return savedEnquiry;
     } catch (error: any) {
         if( error instanceof ApiError) {

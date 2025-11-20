@@ -15,5 +15,5 @@ export interface IEnvConfig {
     hostingerWebMailUser:string;
     hostingerWebMailPass: string
     clientEmail: string;
-
+    enquiryN8NWebhookUrl: string;
 }

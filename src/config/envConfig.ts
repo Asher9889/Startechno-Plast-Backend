@@ -27,7 +27,7 @@ const envConfig: IEnvConfig = {
     clientEmail: process.env.CLIENT_EMAIL || "",
 
     //
-    enquiryN8NWebhookUrl: process.env.ENQUIRY_N8N_WEBHOOK_URL || ""
+    enquiryN8NWebhookUrl: process.env.N8N_ENQUIRY || ""
 
 };
 

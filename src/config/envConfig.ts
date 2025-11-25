@@ -18,10 +18,10 @@ const envConfig: IEnvConfig = {
     refreshSecret: process.env.JWT_REFRESH_SECRET || "test",
 
     // Hostinger
-    gmailWebMailHost: process.env.GMAIL_WEB_MAIL_HOST || "smtp.gmail.email",
+    gmailWebMailHost: process.env.GMAIL_WEB_MAIL_HOST!!,
     gmailWebMailPort: Number(process.env.GMAIL_WEB_MAIL_PORT) || 465,
-    gmailWebMailUser: process.env.GMAIL_WEB_MAIL_USER || "mukesh@startecnoplast.com",
-    gmailWebMailPass: process.env.GMAIL_WEB_MAIL_PASS || "Mukesh@123",
+    gmailWebMailUser: process.env.GMAIL_WEB_MAIL_USER!!,
+    gmailWebMailPass: process.env.GMAIL_WEB_MAIL_PASS!!,
 
     // Client Email
     clientEmail: process.env.CLIENT_EMAIL || "",

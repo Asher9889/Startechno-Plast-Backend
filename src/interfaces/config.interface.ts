@@ -10,10 +10,10 @@ export interface IEnvConfig {
     dbName: string;
     accessSecret: string;
     refreshSecret: string;
-    hostingerWebMailHost: string;
-    hostingerWebMailPort:number;
-    hostingerWebMailUser:string;
-    hostingerWebMailPass: string
+    gmailWebMailHost: string;
+    gmailWebMailPort:number;
+    gmailWebMailUser:string;
+    gmailWebMailPass: string
     clientEmail: string;
     enquiryN8NWebhookUrl: string;
 }

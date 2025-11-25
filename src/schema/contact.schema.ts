@@ -1,6 +1,7 @@
 import z from "zod";
 
-const categoryOptions = ["Plastic Components", "Injection Moulding", "Tooling Design", "Other"] as const;
+// const categoryOptions = ["Plastic Components", "Injection Moulding", "Tooling Design", "Other"] as const;
+const categoryOptions = ["Power banks", "Chargers", "Bluetooth Speakers", "Neckbands", "Earbuds", "Electronic Lighters"] as const;
 
 const contactSchema = z.object({
     name: z
